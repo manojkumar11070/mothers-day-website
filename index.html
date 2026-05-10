@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ami - Mother's Day Surprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="sparkleCanvas" aria-hidden="true"></canvas>
+    <aside class="song-player" id="songPlayer" aria-label="Song player">
+        <div class="song-player__top">
+            <span>Bigari Kismat Bhi Sawar Jayegi</span>
+            <button id="songClose" type="button" aria-label="Stop song">x</button>
+        </div>
+        <audio id="bgSong" src="song.mp3" preload="none" controls loop></audio>
+    </aside>
+
+    <div class="opening" id="opening">
+        <div class="opening__glow"></div>
+        <p class="eyebrow">Aaj ka din sirf Ami ke naam</p>
+        <h1>Ek chhota sa jahan, meri Ami ke liye.</h1>
+        <p>Is website mein pyar, dua, gifts, music aur woh baatein hain jo dil mein rehti hain.</p>
+        <button class="primary-btn" id="enterSite">Surprise Open Karo</button>
+    </div>
+
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="For Ami home">
+            <span>For Ami</span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a href="#letter">Letter</a>
+            <a href="#gifts">Gifts</a>
+            <a href="#memories">Memories</a>
+            <a href="#dua">Dua</a>
+        </nav>
+        <button class="music-btn" id="musicToggle" type="button" aria-pressed="false">
+            <span class="music-icon"></span>
+            Song
+        </button>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero__visual" aria-hidden="true">
+                <div class="moon"></div>
+                <div class="portrait-frame">
+                    <div class="portrait">
+                        <span class="portrait__sun"></span>
+                        <span class="portrait__dupatta"></span>
+                        <span class="portrait__face"></span>
+                        <span class="portrait__smile"></span>
+                    </div>
+                </div>
+                <div class="floating-note note-one">Dua</div>
+                <div class="floating-note note-two">Sukoon</div>
+                <div class="floating-note note-three">Pyar</div>
+            </div>
+
+            <div class="hero__copy">
+                <p class="eyebrow">Happy Mother's Day</p>
+                <h1>Ami, aap meri duniya ka sab se khoobsurat hissa hain.</h1>
+                <p class="hero__text">Aapki muskurahat ghar ko roshan karti hai. Aapki dua meri himmat hai. Aur aapka pyar meri zindagi ka sab se bara gift hai.</p>
+                <div class="hero__actions">
+                    <button class="primary-btn" id="heartButton" type="button">Dil Ki Baat Suno</button>
+                    <a class="ghost-btn" href="#gifts">Gifts Dekho</a>
+                </div>
+                <div class="love-meter" aria-label="Love meter">
+                    <span>Love Meter</span>
+                    <div><i></i></div>
+                    <strong>Unlimited</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="letter-section" id="letter">
+            <div class="section-heading">
+                <p class="eyebrow">Hidden Letter</p>
+                <h2>Ek khat jo seedha dil se nikla hai.</h2>
+            </div>
+            <div class="letter-card">
+                <button class="seal" id="letterSeal" type="button" aria-label="Open letter">
+                    <span></span>
+                </button>
+                <div class="letter-content" id="letterContent">
+                    <p>Ami, main shayad har roz ye lafz nahi keh pata, lekin aap meri zindagi ki sab se bari blessing hain.</p>
+                    <p>Aapki mehnat, aapki fikar, aapki dua aur aapka sabr meri har kamyabi ke peechay khamoshi se khara hota hai.</p>
+                    <p>Aaj ke din bas itna kehna hai: Allah aapko hamesha sehat, khushi aur sukoon de. I love you so much, Ami.</p>
+                    <strong>- Aapka beta, Manoj Kumar</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="gifts-section" id="gifts">
+            <div class="section-heading">
+                <p class="eyebrow">Surprise Gifts</p>
+                <h2>Har gift ke andar ek nayi feeling chhupi hai.</h2>
+            </div>
+            <div class="gift-grid">
+                <button class="gift-card" data-gift="Aapke liye gulabon jaisi khushboo: meri har dua mein aapki khushi hai." type="button">
+                    <span class="gift-art flower"></span>
+                    <strong>Flowers</strong>
+                    <small>Open me</small>
+                </button>
+                <button class="gift-card" data-gift="Aik tight hug: jo saari thakan, fikar aur tension ko door kar de." type="button">
+                    <span class="gift-art hug"></span>
+                    <strong>Warm Hug</strong>
+                    <small>Open me</small>
+                </button>
+                <button class="gift-card" data-gift="Aap ke liye izzat: kyun ke maa ka maqam har cheez se upar hota hai." type="button">
+                    <span class="gift-art crown"></span>
+                    <strong>Respect</strong>
+                    <small>Open me</small>
+                </button>
+                <button class="gift-card" data-gift="Aapki dua meri shield hai. Allah aapki har dua qabool kare." type="button">
+                    <span class="gift-art prayer"></span>
+                    <strong>Dua</strong>
+                    <small>Open me</small>
+                </button>
+            </div>
+        </section>
+
+        <section class="memories-section" id="memories">
+            <div class="section-heading">
+                <p class="eyebrow">Memory Lights</p>
+                <h2>Chhoti chhoti yaadein, bohat bara pyar.</h2>
+            </div>
+            <div class="memory-track">
+                <article class="memory active">
+                    <span>01</span>
+                    <h3>Jab main thak jata hoon</h3>
+                    <p>Aapki awaaz hi enough hoti hai mujhe phir se strong feel karwane ke liye.</p>
+                </article>
+                <article class="memory">
+                    <span>02</span>
+                    <h3>Jab main confuse hota hoon</h3>
+                    <p>Aapka simple sa mashwara mere liye poora raasta clear kar deta hai.</p>
+                </article>
+                <article class="memory">
+                    <span>03</span>
+                    <h3>Jab ghar aata hoon</h3>
+                    <p>Aapki wajah se ghar sirf jagah nahi, sukoon ban jata hai.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="dua-section" id="dua">
+            <div class="dua-wheel" aria-hidden="true">
+                <span>Sehat</span>
+                <span>Khushi</span>
+                <span>Sukoon</span>
+                <span>Barkat</span>
+            </div>
+            <div>
+                <p class="eyebrow">Final Dua</p>
+                <h2>Allah meri Ami ko hamesha apni hifazat mein rakhe.</h2>
+                <p>Unki har pareshani door ho, unki har subah muskurahat se shuru ho, aur unki zindagi mein hamesha pyar, izzat aur sukoon rahe.</p>
+                <button class="primary-btn" id="finalSurprise" type="button">Final Surprise</button>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal__box">
+            <button class="modal__close" id="modalClose" type="button" aria-label="Close">x</button>
+            <p class="eyebrow">Ami ke naam</p>
+            <h2 id="modalTitle">Surprise</h2>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made with pure love by Manoj Kumar for Ami.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
